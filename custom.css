@@ -38,7 +38,8 @@
     
     position: relative;
     top: 75%;
-    left: 1%;   
+    left: 1%;
+    bottom: 5%;
     font-family: Exo2-Thin;      
     display: inline-block;
     
