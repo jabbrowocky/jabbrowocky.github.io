@@ -37,11 +37,10 @@
 #floatGreeting{
     
     position: relative;
-    top: 10%;
+    top: 75%;
     left: 5%;
     text-align: left;
-    font-family: Exo2-Thin;    
-    color: #ffffff;    
+    font-family: Exo2-Thin;      
     display: inline-block;
     
     
