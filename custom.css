@@ -37,10 +37,22 @@
 #floatGreeting{
     
     position: relative;
-    top: 70%;
+    top: 75%;
     left: 5%;
     text-align: left;
-    font-family: Exo2-Thin;
-    font-size: 175%;
-    color: #FFFFFF;
+    font-family: Exo2-Thin;    
+    color: #ffffff;    
+    display: inline-block;
+    
+    
 }
+
+html{
+    
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    font-smoothing: antialiased;
+    
+}
+
+
