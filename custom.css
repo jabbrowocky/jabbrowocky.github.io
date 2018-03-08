@@ -26,3 +26,21 @@
     -ms-transform: translate(-50%,-50%);
     
 }
+
+@font-face{
+    
+    font-family: Exo2-Thin;
+    src: url(Fonts/Exo2-Thin.otf)
+    
+}
+
+#floatGreeting{
+    
+    position: relative;
+    top:  75%;
+    left: 5%;
+    text-align: left;
+    font-family: Exo2-Thin;
+    font-size: 150%;
+    color: #FFFFFF;
+}
