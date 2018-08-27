@@ -1,0 +1,246 @@
+﻿body {
+    
+    padding-bottom: 20px;
+    background-color: #0e0015;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 6vw;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.Side-Bar-Nav {
+    
+    position: fixed;
+    padding-top: .5em;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 3vw;    
+    overflow: auto;    
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    height: 100%;
+    width: 6vw;
+    background-color: #171717;    
+    text-decoration: none;
+    margin:0;
+
+}
+
+.container-fluid div{
+    justify-content: center;
+}
+
+.fa {
+    padding: 2%;
+    color: rgba(255,255,255,1.0);    
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-shadow: -1px 1px 2px #333;
+    cursor:pointer;
+}
+
+.fa:hover,
+.fa:active,
+.fa:focus {
+    text-shadow: 3px 4px 15px green;
+}
+
+
+
+@font-face {
+  font-family: 'DnDGlyphs';
+  src:  url('fonts/DnDGlyphs.eot?2sjye9');
+  src:  url('fonts/DnDGlyphs.eot?2sjye9#iefix') format('embedded-opentype'),
+    url('fonts/DnDGlyphs.ttf?2sjye9') format('truetype'),
+    url('fonts/DnDGlyphs.woff?2sjye9') format('woff'),
+    url('fonts/DnDGlyphs.svg?2sjye9#DnDGlyphs') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="dnd-"], [class*=" dnd-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'DnDGlyphs' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  color: white;
+  line-height: 1;    
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dnd-brand:before {
+  content: "\e900";
+  color: crimson;
+}
+.dnd-d20:before {
+  content: "\e901";
+}
+.dnd-scroll:before {
+  content: "\e902";
+}
+.Side-Bar-Nav a {
+    padding: 2%;
+    color: rgba(255,255,255,1.0);    
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-shadow: -1px 1px 2px #333;
+    cursor:pointer;
+}
+ a:hover,
+ a:active,
+ a:focus {
+    text-shadow: 1px 2px 12px green;
+    text-decoration: none;
+}
+
+@font-face {
+  font-family: 'CupAndTalon';
+  src:  url('fonts/Cup and Talon.ttf');  
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: CupAndTalon;
+    color: black;    
+}
+
+@font-face {
+  font-family: 'dice';
+  src:  url('fonts/dice.eot?h5qjfy');
+  src:  url('fonts/dice.eot?h5qjfy#iefix') format('embedded-opentype'),
+    url('fonts/dice.ttf?h5qjfy') format('truetype'),
+    url('fonts/dice.woff?h5qjfy') format('woff'),
+    url('fonts/dice.svg?h5qjfy#dice') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="dice-"], [class*=" dice-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'dice' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dice-d20:before {
+  content: "\e900";
+}
+.dice-d12:before {
+  content: "\e901";
+}
+.dice-d100:before {
+  content: "\e902";
+}
+.dice-d10:before {
+  content: "\e903";
+}
+.dice-d8:before {
+  content: "\e904";
+}
+.dice-d4:before {
+  content: "\e905";
+}
+.dice-d6:before {
+  content: "\e906";
+}
+
+.jumbotron hr {
+    border-color: red;
+    
+}
+#splash-banner {
+    text-align:center;
+}
+
+ul{
+    font-size:large;
+}
+#drgn-img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    z-index: 1;
+}
+#log-in-area {
+
+    position: absolute;
+    bottom: 1em;
+    padding-right: 5px;
+    display: block;
+    text-align: center; 
+    font-size: 1em;
+}
+.parch-image{
+    background-image: url('../Images/vintage-parchment.jpg');
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+}
+
+.groupOne {
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1px;   
+    
+    color: black;
+    font-size: 3em; 
+    text-align: center;
+    
+    
+}
+.icon-button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 0;
+    background: transparent;    
+    cursor: pointer;
+    text-shadow: -1px 1px 2px #333;
+}
+.icon-button:hover {
+    transform: translate(-2px, 10%);
+    color: aliceblue;
+}
+
+#roll-target{
+    font-size: .5em;
+    list-style-type: none;
+    padding: 0;
+    font-family: CupAndTalon;
+}
+
+
+
+

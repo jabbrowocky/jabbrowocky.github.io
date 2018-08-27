@@ -7,7 +7,7 @@
     right: 0;
     bottom: 0;   
     background-repeat:   no-repeat;
-    background-image: url("Images/stormtrooperOverlay.jpg");
+    background-image: url("../Images/stormtrooperOverlay.jpg");
     background-size: cover;
     background-position: center center;
     /*background-color: rgba(0,0,0,0.8); /* Black background with opacity */
@@ -37,27 +37,26 @@
 @font-face{
     
     font-family: Exo2-Thin;
-    src: url(Fonts/Exo2-Thin.otf);
+    src: url(fonts/Exo2-Thin.otf);
     
 }
 
 @font-face{
     
     font-family: Baskerville;
-    src: url(Fonts/LibreBaskerville-Regular.otf);
+    src: url(fonts/LibreBaskerville-Regular.otf);
 }
 
 #leftTop{
     
-    opacity: .6;    
+       
     text-align: center;
     border-color: border-primary;
     font-family: Baskerville;
 }
-#rightTop{
+#rightTop{    
     
-    
-    opacity: .6;    
+        
     text-align: center;
     border-color: border-primary;
     font-family: Baskerville;
@@ -76,6 +75,12 @@
     padding: 0;
     
     
+    
+}
+
+#mainDiv{
+
+    display: none;
     
 }
 

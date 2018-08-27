@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="diceroll.css">
+    <link rel="icon" type="image/png" href="../Images/favicon.png" />
+    <title>JS DnD Dice Roller</title>    
+</head>
+
+<div class="container">
+    <h2 style="color:white">Dice Roller</h2>
+    <hr />
+    <div class="row">
+        <div class="col-sm-4 groupOne parch-image">           
+            <center><h2>Dice Pool</h2></center>            
+            <div class="container-fluid">
+                <table class="table-borderless">
+                    <tr>
+                        <td class="text-center"><button class="icon-button" onclick="buildRow('d20',20)"><span class="dice-d20"></span></button></td>
+                        <td class="text-center"><button class="icon-button"  onclick="buildRow('d12', 12)"><span class="dice-d12"></span></button></td>                        
+                        <td class="text-center"><button class="icon-button" onclick="buildRow('d100', 100)"><span class="dice-d100"></span></button><button class="icon-button" onclick="buildRow('d10', 10)"><span class="dice-d10" ></span></button></td>
+                        <td class="text-center"><button class="icon-button"  onclick="buildRow('d8',8)"><span class="dice-d8"></span></button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-center"><button class="icon-button"  onclick="buildRow('d6',6)"><span class="dice-d6"></span></button></td>
+                        <td class="text-center"><button class="icon-button"  onclick="buildRow('d4',4)"><span class="dice-d4"></span></button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-1"></div> 
+        <div class="col-sm-4 groupOne parch-image">
+            <center><h2>Rolls To Make</h2></center>            
+            <div class="container">
+                <table class="table-condensed" id="addRolls" border="0" style="margin:auto">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2 groupOne parch-image">
+            <center><h2>Rolls</h2></center>
+            <div class="container">
+                <ul  id="roll-target"></ul>
+            </div>
+        </div>                    
+        
+    </div>    
+</div>
+<script src="../Scripts/diceRoll.js"></script>
+</html>
