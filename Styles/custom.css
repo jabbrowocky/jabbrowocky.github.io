@@ -37,14 +37,14 @@
 @font-face{
     
     font-family: Exo2-Thin;
-    src: url(Fonts/Exo2-Thin.otf);
+    src: url("../Fonts/Exo2-Thin.otf");
     
 }
 
 @font-face{
     
     font-family: Baskerville;
-    src: url(Fonts/LibreBaskerville-Regular.otf);
+    src: url("../Fonts/LibreBaskerville-Regular.otf");
 }
 
 #leftTop{
