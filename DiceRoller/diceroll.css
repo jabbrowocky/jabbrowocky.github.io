@@ -1,7 +1,9 @@
 ﻿body {
     
     padding-bottom: 20px;
-    background-color: #0e0015;
+    background-image:  url('../Images/wood_old.jpg');
+    background-repeat: none;
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -77,7 +79,14 @@ textarea {
     text-shadow: 1px 2px 12px green;
     text-decoration: none;
 }
-
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:black;
+    height: 1px;
+  }
 @font-face {
   font-family: 'CupAndTalon';
   src:  url('fonts/Cup and Talon.ttf');  
@@ -140,7 +149,6 @@ h1,h2,h3,h4,h5,h6{
 
 
 
-
 .parch-image{
     background-image: url('../Images/vintage-parchment.jpg');
     background-repeat: no-repeat;
@@ -149,19 +157,17 @@ h1,h2,h3,h4,h5,h6{
     align-content: center;
     
 }
-
-.groupOne {
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1px;   
-    
-    color: black;
-    font-size: 3em; 
+.table-condensed{
+    margin: 0 auto;
+    width: 50% !important;
     text-align: center;
-    
-    
 }
+#rolls{
+    height: 275px;
+    max-height: 275px;
+    overflow-y: auto;
 
+}
 
 #roll-target{
     font-size: .5em;

@@ -12,9 +12,9 @@
         buildRow(dice.key,dice.value);
     });
 }
-const rollDice = (sides, inputId) => {
-    document.getElementById(inputId + "-btn").disabled = true;
-    killDiv('roll-target');
+const rollDice = (sides, inputId) => {    
+    Array.from(document.getElementById('addRolls')
+        .getElementsByTagName('tbody')[0].getElementsByTagName('button')).map(btn => btn.disabled = true);
     var rollCount = parseInt(document.getElementById('input-' + inputId).value);  
     var li = document.createElement('li');
     li.innerHTML = `<strong>${inputId}</strong>`;
@@ -31,14 +31,14 @@ const killDiv = id => {
 }
 function loopRolls(i,sides,origVal) {
     setTimeout(function () {
-
         var textNode = document.createTextNode(`\nRoll ${(origVal - i) + 1} is: ${Math.floor(Math.random() * Math.floor(sides)) + 1}`);
         var rollTarget = document.getElementById('roll-target');
         var li = document.createElement('li');
         li.appendChild(textNode);
         rollTarget.appendChild(li);
-        (--i) ? loopRolls(i, sides, origVal) : document.getElementById("d" + sides + "-btn").disabled = false;
-    }, 1500);
+       (--i) ? loopRolls(i, sides, origVal) : Array.from(document.getElementById('addRolls').getElementsByTagName('tbody')[0].getElementsByTagName('button')
+       ).map(btn => btn.disabled = false);
+    }, 750);
     
 }
 const buildRow = (diceType, sideCount) => {   
@@ -49,8 +49,8 @@ const buildRow = (diceType, sideCount) => {
         var row = [
             buildIcon('dice-'+diceType),
             buildNumInput(diceType),
-            buildButton(diceType,'btn btn-sm btn-success','Make Rolls',`rollDice(${sideCount}, '${diceType}')`)
-            // buildButton(diceType,'btn btn-sm btn-danger','Remove', `removeRow('${diceType}')`)
+            buildButton(diceType,'btn btn-sm btn-success','Roll',`rollDice(${sideCount}, '${diceType}')`)
+            
         ];          
         for (let i = 0; i < row.length; i ++){
             var td;
@@ -84,25 +84,20 @@ const buildIcon = (classString) => {
 const buildNumInput = (idString) => {
     var inputBox = document.createElement('input');
     inputBox.type = 'number';
-    inputBox.onkeypress = function (evt) {
-        var charCode = (evt.which) ? evt.which : event.keyCode;
+    inputBox.onkeydown = function (evt) {
+       /*  var charCode = (evt.which) ? evt.which : event.keyCode;        
         if (this.value.length == 0 && evt.which == 48){
             return false;
          }
         if (charCode > 31 && (charCode < 48 || charCode > 57))
             return false;
-        return true;
+        return true; */
+        return false;
     }
     inputBox.className = 'form-control';
     inputBox.step = 1;
     inputBox.min = 1;    
-    inputBox.value = 1;
     inputBox.id = `input-${idString}`;
     return inputBox;
 }
 
-const removeRow = (rowId) => {
-    var rowToRemove = document.getElementById(rowId);
-    var table = document.getElementById('addRolls').getElementsByTagName('tbody')[0];
-    table.removeChild(rowToRemove);
-}
