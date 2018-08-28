@@ -1,11 +1,25 @@
-﻿const rollDice = (sides, inputId) => {
+﻿window.onload = function(){
+   var dice = [
+        {key:"d20", value:20},
+        {key:"d12", value:12},
+        {key:"d100", value:100},
+        {key:"d10", value:10},
+        {key:"d8", value:8},
+        {key:"d6", value:6},
+        {key:"d4", value:4}
+    ];
+    dice.map(dice => {
+        buildRow(dice.key,dice.value);
+    });
+}
+const rollDice = (sides, inputId) => {
     document.getElementById(inputId + "-btn").disabled = true;
     killDiv('roll-target');
     var rollCount = parseInt(document.getElementById('input-' + inputId).value);  
-    var lh = document.createElement('lh');
-    lh.innerHTML = `<strong>${inputId}</strong>`;
+    var li = document.createElement('li');
+    li.innerHTML = `<strong>${inputId}</strong>`;
     
-    document.getElementById('roll-target').appendChild(lh);
+    document.getElementById('roll-target').appendChild(li);
     loopRolls(rollCount, sides, rollCount);
     
 }
@@ -28,15 +42,15 @@ function loopRolls(i,sides,origVal) {
     
 }
 const buildRow = (diceType, sideCount) => {   
-    if(!document.getElementById(diceType)){
+    
         var targetBody = document.getElementById('addRolls').getElementsByTagName('tbody')[0];       
         var tableRow = document.createElement('tr');
         tableRow.id = diceType;
         var row = [
             buildIcon('dice-'+diceType),
             buildNumInput(diceType),
-            buildButton(diceType,'btn btn-sm btn-success','Make Rolls',`rollDice(${sideCount}, '${diceType}')`),
-            buildButton(diceType,'btn btn-sm btn-danger','Remove', `removeRow('${diceType}')`)
+            buildButton(diceType,'btn btn-sm btn-success','Make Rolls',`rollDice(${sideCount}, '${diceType}')`)
+            // buildButton(diceType,'btn btn-sm btn-danger','Remove', `removeRow('${diceType}')`)
         ];          
         for (let i = 0; i < row.length; i ++){
             var td;
@@ -51,16 +65,12 @@ const buildRow = (diceType, sideCount) => {
             }
         }
         targetBody.appendChild(tableRow);
-    }
+    
 }
 
 
 const buildButton = (id,classString, btnText, funcAssign) => {
-    //var button = document.createElement('button');
-    //button.innerHTML = btnText;
-    //button.className = classString;
-    //button.onclick = funcAssign;
-    //return button;
+   
     return `<button id='${id}-btn' class='${classString}' onclick="${funcAssign}">${btnText}</button>`;    
 
 }
