@@ -74,12 +74,18 @@ const buildIcon = (classString) => {
 const buildNumInput = (idString) => {
     var inputBox = document.createElement('input');
     inputBox.type = 'number';
-    inputBox.onkeydown = function () {
-        return false;
+    inputBox.onkeypress = function (evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (this.value.length == 0 && evt.which == 48){
+            return false;
+         }
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
     }
     inputBox.className = 'form-control';
     inputBox.step = 1;
-    inputBox.min = 1;
+    inputBox.min = 1;    
     inputBox.value = 1;
     inputBox.id = `input-${idString}`;
     return inputBox;
