@@ -26,6 +26,9 @@ input,
 select,
 textarea {
     max-width: 280px;
+    text-align: center;
+    font-family: CupAndTalon;
+    
 }
 
 

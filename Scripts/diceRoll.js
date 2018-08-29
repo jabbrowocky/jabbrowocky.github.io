@@ -86,7 +86,7 @@ const incrementInput = (inputId) =>{
 const decrementInput = (inputId) =>{
     var input = document.getElementById(inputId);
     var inputVal = parseInt(input.value);
-    ((inputVal-1) >= parseInt(input.min)) ? input.value = inputVal-1:input.value;
+    ((inputVal-1) >= 1) ? input.value = inputVal-1:input.value;
 }
 const buildButton = (id,classString, btnText, funcAssign) => {
    
