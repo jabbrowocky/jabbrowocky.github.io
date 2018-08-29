@@ -62,7 +62,7 @@ const buildRow = (diceType, sideCount) => {
 const buildInputGroup = (diceGroup,rollFunc) =>{
     
     var inputDiv = document.createElement('div');
-    inputDiv.className = 'input-group input-group-sm mb-3';
+    inputDiv.className = 'input-group input-group-lg mb-3';
     var decreaseDiv = document.createElement('div');
     decreaseDiv.className = 'input-group-prepend';
     decreaseDiv.innerHTML = buildButton(`${diceGroup}-decrease`,'btn btn-outline-danger',"<i class='far fa-minus-square'></i>",`decrementInput('input-${diceGroup}')`);
