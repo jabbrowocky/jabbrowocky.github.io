@@ -49,7 +49,7 @@ const buildRow = (diceType, sideCount) => {
         tableRow.id = diceType;
         var row = [
             buildIcon('dice-'+diceType),            
-            buildInputGroup(diceType,buildButton(diceType,'btn btn-primary','Roll',`rollDice(${sideCount}, '${diceType}')`))                      
+            buildInputGroup(diceType,buildButton(diceType,'btn btn-dark','Roll',`rollDice(${sideCount}, '${diceType}')`))                      
         ];          
         for (let i = 0; i < row.length; i ++){             
             var td = document.createElement('td');
@@ -65,12 +65,12 @@ const buildInputGroup = (diceGroup,rollFunc) =>{
     inputDiv.className = 'input-group input-group-lg mb-3';
     var decreaseDiv = document.createElement('div');
     decreaseDiv.className = 'input-group-prepend';
-    decreaseDiv.innerHTML = buildButton(`${diceGroup}-decrease`,'btn btn-outline-danger',"<i class='far fa-minus-square'></i>",`decrementInput('input-${diceGroup}')`);
+    decreaseDiv.innerHTML = buildButton(`${diceGroup}-decrease`,'btn btn-outline-danger',"<i class='fas fa-minus-square'></i>",`decrementInput('input-${diceGroup}')`);
     inputDiv.appendChild(decreaseDiv);
     inputDiv.appendChild(buildInput(diceGroup));
     var increaseDiv = document.createElement('div');
     increaseDiv.className = 'input-group-append';
-    increaseDiv.innerHTML = buildButton(`${diceGroup}-increase`,'btn btn-outline-success',"<i class='far fa-plus-square'></i>",`incrementInput('input-${diceGroup}')`) + rollFunc;
+    increaseDiv.innerHTML = buildButton(`${diceGroup}-increase`,'btn btn-outline-success',"<i class='fas fa-plus-square'></i>",`incrementInput('input-${diceGroup}')`) + rollFunc;
     inputDiv.appendChild(increaseDiv);
     
     return inputDiv;
