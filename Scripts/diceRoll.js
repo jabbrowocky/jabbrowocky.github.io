@@ -67,7 +67,7 @@ const buildInputGroup = (diceGroup,rollFunc) =>{
     decreaseDiv.className = 'input-group-prepend';
     decreaseDiv.innerHTML = buildButton(`${diceGroup}-decrease`,'btn btn-outline-danger',"<i class='far fa-minus-square'></i>",`decrementInput('input-${diceGroup}')`);
     inputDiv.appendChild(decreaseDiv);
-    inputDiv.appendChild(buildNumInput(diceGroup));
+    inputDiv.appendChild(buildInput(diceGroup));
     var increaseDiv = document.createElement('div');
     increaseDiv.className = 'input-group-append';
     increaseDiv.innerHTML = buildButton(`${diceGroup}-increase`,'btn btn-outline-success',"<i class='far fa-plus-square'></i>",`incrementInput('input-${diceGroup}')`) + rollFunc;
@@ -100,29 +100,14 @@ const buildIcon = (classString) => {
     return icon;
 }
 
-const buildNumInput = (idString) => {
+const buildInput = (idString) => {
     
     var inputBox = document.createElement('input');
-    inputBox.type = 'number';
-    /* inputBox.onkeypress = function (evt) {
-       
-       var charCode = (evt.which) ? evt.which : event.keyCode;        
-        if (this.value.length == 0 && evt.which == 48){
-            return false;
-         }
-        if (charCode > 31 && (charCode < 48 || charCode > 57)){
-            return false;
-        }
-        
-        return true;
-       
-    } */
-    inputBox.disabled = 'disabled';
-    inputBox.className = 'form-control';
-    inputBox.step = 1;
-    inputBox.min = 1;
-    inputBox.value = 1;    
+    inputBox.type = 'text';    
+    inputBox.className = 'form-control';    
+    inputBox.value = '1';    
     inputBox.id = `input-${idString}`;
+    inputBox.disabled = "true";
     return inputBox;
 }
 
