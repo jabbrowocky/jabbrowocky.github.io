@@ -37,10 +37,15 @@ function loopRolls(i,sides,origVal) {
         var li = document.createElement('li');
         li.appendChild(textNode);
         rollTarget.appendChild(li);
-       (--i) ? loopRolls(i, sides, origVal) : Array.from(document.getElementById('addRolls').getElementsByTagName('tbody')[0].getElementsByTagName('button')
-       ).map(btn => btn.disabled = false);
+        updateScroll('pills-tabContent');
+        (--i) ? loopRolls(i, sides, origVal) : Array.from(document.getElementById('addRolls').getElementsByTagName('tbody')[0].getElementsByTagName('button')
+        ).map(btn => btn.disabled = false);
     }, 1050);
     
+}
+const updateScroll = (elem) => {
+    var rollDiv = document.getElementById(elem);
+    rollDiv.scrollTop = rollDiv.scrollHeight;
 }
 const buildRow = (diceType, sideCount) => {   
     
