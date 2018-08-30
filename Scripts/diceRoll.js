@@ -43,7 +43,7 @@ function loopRolls(i,sides,origVal) {
     }, 1050);
     
 }
-const updateScroll = (elem) => {
+const updateScroll = elem => {
     var rollDiv = document.getElementById(elem);
     rollDiv.scrollTop = rollDiv.scrollHeight;
 }
@@ -54,7 +54,7 @@ const buildRow = (diceType, sideCount) => {
         tableRow.id = diceType;
         var row = [
             buildIcon('dice-'+diceType),            
-            buildInputGroup(diceType,buildButton(diceType,'btn btn-dark','Roll',`rollDice(${sideCount}, '${diceType}')`))                      
+            buildInputGroup(diceType,buildButton(diceType,'btn btn-outline-dark','Roll',`rollDice(${sideCount}, '${diceType}')`))                      
         ];          
         for (let i = 0; i < row.length; i ++){             
             var td = document.createElement('td');
