@@ -75,14 +75,34 @@ input[disabled="disabled"] {
 }
 
 
-hr {
+/* hr {
     border: 0;
     clear:both;
     display:block;
     width: 96%;               
     background-color:black;
     height: 1px;
+  } */
+  hr.stylized { 
+    height: 30px; 
+    border-style: solid; 
+    border-color: black; 
+    border-width: 1px 0 0 0; 
+    border-radius: 20px;
+    width: 92%; 
+  } 
+  hr.stylized::before { 
+    display: block; 
+    content: ""; 
+    height: 30px; 
+    margin-top: -31px; 
+    border-style: solid; 
+    border-color: black; 
+    border-width: 0 0 1px 0; 
+    border-radius: 20px;
+    
   }
+  
 @font-face {
   font-family: 'CupAndTalon';
   src:  url('fonts/Cup and Talon.ttf');  
@@ -186,35 +206,64 @@ h1,h2,h3,h4,h5,h6{
     overflow-y: auto;
     max-height: 420px;
     height: 420px;
+    padding-left: 15px;
 }
+
 .nav-pills .roll-pill .nav-link:not(.active) 
 {
     background-color: transparent;
     color: black;
     border: solid 1px black;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .nav-pills .roll-pill .nav-link:not(.active):hover{
-
+    background-color: rgba(36, 34, 34, 0.4);
+    color: lightgray;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
 }
-.nav-pills .log-pill .nav-link:not(.active), 
-.nav-pills .log-pill .nav-link:not(.active):hover{
+
+.nav-pills .log-pill .nav-link:not(.active) 
+{
     background-color: transparent;
     color: black;
     border: solid 1px black;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
-/* active (faded) */
+.nav-pills .log-pill .nav-link:not(.active):hover{
+    background-color: rgba(36, 34, 34, 0.4);
+    color: lightgray;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+}
+/* active pills */
 .nav-pills .roll-pill .nav-link {
-    background-color: rgba(4, 245, 15, 0.6);
+    background-color: transparent;
     color: black;    
     border: solid 1px black;
+    border-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
-
+.nav-pills .roll-pill .nav-link:hover{
+    cursor: not-allowed;
+}
 .nav-pills .log-pill .nav-link {
-    background-color: rgba(4, 245, 15, 0.6);
+    background-color: transparent;
     color: black;    
     border: solid 1px black;
+    border-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    
 }
-
+.nav-pills .log-pill .nav-link:hover{
+    cursor: not-allowed;
+}
 
 
 
