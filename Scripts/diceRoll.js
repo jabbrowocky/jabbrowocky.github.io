@@ -11,11 +11,11 @@
     dice.map(dice => {
         buildRow(dice.key,dice.value);
     });
+    
 }
 const rollDice = (sides, inputId) => {    
     Array.from(document.getElementById('addRolls')
-        .getElementsByTagName('tbody')[0].getElementsByTagName('button')).map(btn => btn.disabled = true);
-    killDiv('roll-target');
+        .getElementsByTagName('tbody')[0].getElementsByTagName('button')).map(btn => btn.disabled = true);    
     var rollCount = parseInt(document.getElementById('input-' + inputId).value);  
     var li = document.createElement('li');
     li.innerHTML = `<strong>${inputId}</strong>`;
@@ -24,24 +24,43 @@ const rollDice = (sides, inputId) => {
     loopRolls(rollCount, sides, rollCount);
     
 }
-const killDiv = id => {
+const clearDiv = id => {
     var div = document.getElementById(id);
     while (div.firstChild) {
         div.removeChild(div.firstChild);
-    }
+    }    
 }
-function loopRolls(i,sides,origVal) {
-    setTimeout(function () {
+const clearRolls=(id)=>{
+    clearDiv(id);
+    toggleLogButtons('button-row');
+}
+const toggleLogButtons = (btnGrp) => {
+    Array.from(document.getElementById(btnGrp).getElementsByTagName('button')).map(btn => (btn.disabled == true) ? btn.disabled = false:btn.disabled=true);
+}
+const loopRolls = (i,sides,origVal) => {
+    setTimeout(() => {
         var textNode = document.createTextNode(`\nRoll ${(origVal - i) + 1} is: ${Math.floor(Math.random() * Math.floor(sides)) + 1}`);
         var rollTarget = document.getElementById('roll-target');
         var li = document.createElement('li');
         li.appendChild(textNode);
         rollTarget.appendChild(li);
-        updateScroll('pills-tabContent');
-        (--i) ? loopRolls(i, sides, origVal) : Array.from(document.getElementById('addRolls').getElementsByTagName('tbody')[0].getElementsByTagName('button')
-        ).map(btn => btn.disabled = false);
+        updateScroll('rolls-container');
+        (--i) ? loopRolls(i, sides, origVal) : (Array.from(document.getElementById('addRolls').getElementsByTagName('tbody')[0].getElementsByTagName('button')
+        ).map(btn => btn.disabled = false),toggleLogButtons('button-row'));
     }, 1050);
     
+}
+
+const generateModalContent = (target) => {
+    $('#add-note-modal').on('show.bs.modal', function (event) {        
+        var diceData = document.getElementById(target).childNodes;
+        var dice = diceData[0].innerText;
+        var rollCount = diceData.length - 1;
+        var modal = $(this);
+        modal.find('.modal-title').text('Add note for ' + dice);
+        modal.find('.modal-body input').val(`Dice Type: ${dice}  Roll Count: ${rollCount}`);       
+      });
+      
 }
 const updateScroll = elem => {
     var rollDiv = document.getElementById(elem);

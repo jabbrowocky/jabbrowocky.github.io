@@ -39,20 +39,34 @@
                                         
                                     </ul>
                                     <div class="tab-content" id="pills-tabContent">
-                                        <div class="tab-pane fade show active" id="pills-rolls" role="tabpanel" aria-labelledby="pills-rolls-tab">
-                                            <div id="rolls-container">
+                                        <div class="tab-pane fade show active" id="pills-rolls" role="tabpanel" aria-labelledby="pills-rolls-tab">                        <h3 class="text-center">Rolls</h3>
+                                            <hr class="stylized">
+                                            <div id="buttonRow-wrapper">
+                                                <div id="button-row">
+                                                    <button class="btn btn-outline-dark" disabled="true" onclick="clearRolls('roll-target')">
+                                                        Clear
+                                                    </button>
+                                                    <button class="btn btn-outline-dark" data-toggle="modal" id="modal-log-btn" data-target="#add-note-modal" onclick="generateModalContent('roll-target')" disabled="true">
+                                                        Add Log
+                                                    </button>
+                                                </div>
+                                            </div>            
+                                            <div id="rolls-container">                      
+                                                                                              
                                                 <section>
-                                                    <h3 class="text-center">Rolls</h3>
-                                                    <hr class="stylized">
                                                     <div id="rolls-wrapper">
                                                         <ul id="roll-target"></ul>
                                                     </div>
                                                 </section>
-                                            </div>                                            
+                                            </div>
+                                                                                        
                                         </div>
                                         <div class="tab-pane fade" id="pills-log" role="tabpanel" aria-labelledby="pills-log-tab">
                                             <h3 class="text-center">Roll Log</h3>
                                             <hr class="stylized">
+                                            <div id="log-wrapper">
+                                                
+                                            </div>
                                         </div>                                        
                                     </div> 
                                 </div>                          
@@ -62,7 +76,35 @@
                     </div>                               
                 </div>           
             </div>
-        </div> 
+        </div>
+        <div class="modal fade" id="add-note-modal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="noteModalLabel">Add Note</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Log Info:</label>
+                          <input type="text" class="form-control" disabled ="disabled" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">Add Note:</label>
+                          <textarea class="form-control" id="note-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="logRolls('roll-target')">Log Rolls</button>
+                    </div>
+                  </div>
+                </div>
+              </div>                                  
     </div>
     <script
 			  src="https://code.jquery.com/jquery-3.3.1.js"
