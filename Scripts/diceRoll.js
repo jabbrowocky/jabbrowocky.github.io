@@ -15,7 +15,8 @@
 }
 const rollDice = (sides, inputId) => {    
     Array.from(document.getElementById('addRolls')
-        .getElementsByTagName('tbody')[0].getElementsByTagName('button')).map(btn => btn.disabled = true);    
+        .getElementsByTagName('tbody')[0].getElementsByTagName('button')).map(btn => btn.disabled = true);
+    Array.from(document.getElementById('button-row').getElementsByTagName('button')).map(btn => btn.disabled = true);
     var rollCount = parseInt(document.getElementById('input-' + inputId).value);  
     var li = document.createElement('li');
     li.innerHTML = `<strong>${inputId}</strong>`;
@@ -46,7 +47,7 @@ const loopRolls = (i,sides,origVal) => {
         rollTarget.appendChild(li);
         updateScroll('rolls-container');
         (--i) ? loopRolls(i, sides, origVal) : (Array.from(document.getElementById('addRolls').getElementsByTagName('tbody')[0].getElementsByTagName('button')
-        ).map(btn => btn.disabled = false),toggleLogButtons('button-row'));
+        ).map(btn => btn.disabled = false), Array.from(document.getElementById('button-row').getElementsByTagName('button')).map(btn => btn.disabled = false));
     }, 1050);
     
 }
