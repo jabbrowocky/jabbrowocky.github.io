@@ -82,7 +82,7 @@ input[disabled="disabled"] {
     height: 1px;
   } */
 hr.stylized { 
-    height: 30px; 
+    height: 15px; 
     border-style: solid; 
     border-color: black; 
     border-width: 1px 0 0 0; 
@@ -93,8 +93,8 @@ hr.stylized {
 hr.stylized::before { 
     display: block; 
     content: ""; 
-    height: 30px; 
-    margin-top: -31px; 
+    height: 15px; 
+    margin-top: -16px; 
     border-style: solid; 
     border-color: black; 
     border-width: 0 0 1px 0; 
@@ -174,8 +174,7 @@ h1,h2,h3,h4,h5,h6{
     max-height: 370px;
     height: 370px;
 }
-#rolls-wrapper {
-    
+#rolls-wrapper {    
     text-align: left;
     padding-left: 20%;
 }
